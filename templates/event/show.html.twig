@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+
+<div class="card bg-dark text-white">
+    <img src="{{asset('picture/'~ event.picture)}}" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h1 class="card-title text-secondary">{{event.name}}</h1>
+        <p class="card-text detail_info text-secondary"><b>Date: </b>{{event.date|date('F j, Y, g:i a')}}</p>
+        <p class="card-text detail_info text-secondary"><b>Start Time: </b>{{event.startTime|date('F j, Y, g:i a')}}</p>
+        <p class="card-text detail_info text-secondary"><b>Email Address: </b>{{event.email}}</p>
+        <p class="card-text detail_info text-secondary"><b>Number of People: </b>{{event.capacity}}</p>
+        <p class="card-text detail_info text-secondary"><b>Phone Number: </b>{{event.phoneNumber}}</p>
+        <p class="card-text detail_info text-secondary"><b>City: </b>{{event.city}}</p>
+        <p class="card-text detail_info text-secondary"><b>Street Name: </b>{{event.streetName}}</p>
+        <p class="card-text detail_info text-secondary"><b>House Number: </b>{{event.houseNumber}}</p>
+        <p class="card-text detail_info text-secondary"><b>Zip Code: </b>{{event.zipCode}}</p>
+        <p class="card-text detail_info text-secondary"><b>Event Website: </b>{{event.eventUrl}}</p>
+        <p class="card-text detail_info text-secondary"><b>Description: </b>{{event.description}}</p>
+        <div class="col-12 mt-2">
+            <a href="/{{event.id}}/edit"><button class="btn btn-warning"
+                    type="button">Edit</button></a>
+            <a href="/"><button class="btn btn-secondary" type="button">Home</button></a>
+            <a href="/delete/{{event.id}}"><button class="btn btn-danger "
+                    type="button">Delete</button></a>
+        </div>
+    </div>
+</div>
+
+
+{# <div class="card">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{asset('picture/'~ event.picture)}}" class="class=" image-fluid" alt="...">
+        </div>
+        <div class="col-md-8 ">
+            <div class="card-body">
+                <h5 class="card-title detail_title detail_info">{{event.name}}</h5>
+                <p class="card-text detail_info"><b>Date: </b>{{event.date|date('F j, Y, g:i a')}}</p>
+                <p class="card-text detail_info"><b>Start Time: </b>{{event.startTime|date('F j, Y, g:i a')}}</p>
+                <p class="card-text detail_info"><b>Email Address: </b>{{event.email}}</p>
+                <p class="card-text detail_info"><b>Number of People: </b>{{event.capacity}}</p>
+                <p class="card-text detail_info"><b>Phone Number: </b>{{event.phoneNumber}}</p>
+                <p class="card-text detail_info"><b>City: </b>{{event.city}}</p>
+                <p class="card-text detail_info"><b>Street Name: </b>{{event.streetName}}</p>
+                <p class="card-text detail_info"><b>House Number: </b>{{event.houseNumber}}</p>
+                <p class="card-text detail_info"><b>Zip Code: </b>{{event.zipCode}}</p>
+                <p class="card-text detail_info"><b>Event Website: </b>{{event.eventUrl}}</p>
+                <p class="card-text detail_info"><b>Description: </b>{{event.description}}</p>
+            </div>
+
+            <div class="col-12">
+                <a href="/{{event.id}}/edit"><button class="button btn btn-outline-warning detail_button"
+                        type="button">Edit</button></a>
+                <a href="/"><button class="button button2 btn btn-outline-secondary" type="button">Home</button></a>
+                <a href="/delete/{{event.id}}"><button class="button button2 btn btn-outline-danger "
+                        type="button">Delete</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div> #}
+
+{# <table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ event.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ event.name }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Start_time</th>
+            <td>{{ event.startTime ? event.startTime|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ event.description }}</td>
+        </tr>
+        <tr>
+            <th>Picture</th>
+            <td>{{ event.picture }}</td>
+        </tr>
+        <tr>
+            <th>Capacity</th>
+            <td>{{ event.capacity }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ event.email }}</td>
+        </tr>
+        <tr>
+            <th>Phone_number</th>
+            <td>{{ event.phoneNumber }}</td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>{{ event.city }}</td>
+        </tr>
+        <tr>
+            <th>Street_name</th>
+            <td>{{ event.streetName }}</td>
+        </tr>
+        <tr>
+            <th>House_number</th>
+            <td>{{ event.houseNumber }}</td>
+        </tr>
+        <tr>
+            <th>Zip_code</th>
+            <td>{{ event.zipCode }}</td>
+        </tr>
+        <tr>
+            <th>Event_url</th>
+            <td>{{ event.eventUrl }}</td>
+        </tr>
+    </tbody>
+</table> #}
+
+{# <a href="{{ path('app_event_index') }}">back to list</a>
+
+<a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+
+{{ include('event/_delete_form.html.twig') }} #}
+{% endblock %}
