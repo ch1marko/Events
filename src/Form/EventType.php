@@ -19,7 +19,7 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name',  TextType::class, ["attr"=>["placeholder" => "Please type", "class" => "form-control  w-75 mb-2" ]])
+            ->add('name', TextType::class, ["attr"=>["placeholder" => "Please type", "class" => "form-control  w-75 mb-2" ]])
             ->add('date', DateTimeType::class, ["attr" =>["class"=>"form-control  w-75 mb-2",'format' => 'yyyy-MM-dd']])
             ->add('start_time', DateTimeType::class, ["attr" =>["class"=>"form-control  w-75 mb-2"]])
             ->add('description', TextareaType::class,  ["attr"=>["placeholder" => "Please type a description...", "class" => "form-control  w-75 mb-2" ]])

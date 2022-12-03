@@ -1,4 +1,13 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    <style>
+    #event{
+        color:white;
+    }
+    .btn{
+
+        margin-bottom: 5%;
+    }
+    </style>
     <button class="btn btn-primary mb-2">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

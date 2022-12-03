@@ -4,12 +4,17 @@
 
 
 {% block body %}
+<style>
+    body {
+        background-color: rgb(19, 27, 55);
+    }
+</style>
 
-    <h1>Edit Event</h1>
+<h1 style="color:white ;">Edit Event</h1>
 
-    {{ include('event/_form.html.twig', {'button_label': 'Update'}) }}
+{{ include('event/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a class="btn btn-primary" href="{{ path('app_event_index') }}">Back to List</a>
+<a class="btn btn-primary" href="{{ path('app_event_index') }}">Back to List</a>
 
-    {{ include('event/_delete_form.html.twig') }}
+{{ include('event/_delete_form.html.twig') }}
 {% endblock %}

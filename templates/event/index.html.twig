@@ -18,6 +18,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{event.name}}</h5>
                     <p class="card-text">{{event.description}}</p>
+                    <p class="card-text">{{event.startTime|date('d.m.Y g:i')}}</p>
                     <a href="/{{event.id}}" class="btn btn-outline-success">Details</a>
                     <a href="{{event.id}}/edit" class="btn btn-outline-dark">Edit</a>
                     <a href="/delete/{{event.id}}" class="btn btn-danger">Delete</a>
